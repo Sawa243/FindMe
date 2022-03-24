@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Найди меня</string>
+    <string name="new_game">Новая Игра</string>
+    <string name="settings">Настройки</string>
+    <string name="records">Рекорды</string>
+    <string name="quit_the_game">Выйти из игры</string>
+    <string name="result_uppercase">РЕЗУЛЬТАТ</string>
+    <string name="ok_uppercase">ОК</string>
+    <string name="back_to_menu">Обратно в меню</string>
+    <string name="top_records">Топ рекордов:</string>
+    <string name="the_background">Задний фон</string>
+    <string name="white">Белый</string>
+    <string name="green">Зеленый</string>
+    <string name="cyan">Голубой</string>
+    <string name="yellow">Желтый</string>
+    <string name="gray">Серый</string>
+    <string name="random">Рандомный</string>
+    <string name="score">Счёт:</string>
+    <string name="timer">Таймер: </string>
+</resources>

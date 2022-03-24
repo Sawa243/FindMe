@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainScreen">
+
+    <fragment
+        android:id="@+id/MainScreen"
+        android:name="com.example.circlesgame.MainScreen"
+        tools:layout="@layout/fragment_main_screen">
+
+        <action
+            android:id="@+id/action_MainScreen_to_settingsScreen"
+            app:destination="@id/SettingsScreen" />
+        <action
+            android:id="@+id/action_MainScreen_to_recordsScreen"
+            app:destination="@id/RecordsScreen" />
+        <action
+            android:id="@+id/action_MainScreen_to_GameScreen"
+            app:destination="@id/GameScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/GameScreen"
+        android:name="com.example.circlesgame.GameScreen"
+        tools:layout="@layout/fragment_game_screen">
+        <action
+            android:id="@+id/action_GameScreen_to_MainScreen"
+            app:destination="@id/MainScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/RecordsScreen"
+        android:name="com.example.circlesgame.RecordsScreen"
+        android:label="RecordsScreen" >
+        <action
+            android:id="@+id/action_recordsScreen_to_MainScreen"
+            app:destination="@id/MainScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/SettingsScreen"
+        android:name="com.example.circlesgame.SettingsScreen"
+        android:label="SettingsScreen" >
+        <action
+            android:id="@+id/action_settingsScreen_to_MainScreen"
+            app:destination="@id/MainScreen" />
+    </fragment>
+</navigation>

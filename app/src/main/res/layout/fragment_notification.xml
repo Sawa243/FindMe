@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:clipToPadding="false"
+    android:padding="15dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/Yellow"
+        app:strokeWidth="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:background="@color/Coral">
+
+            <ImageView
+                android:id="@+id/img_notification"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="37dp"
+                android:src="@drawable/results"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_notification"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:gravity="center"
+                android:text="@string/result_uppercase"
+                android:textColor="@color/Blue"
+                android:textFontWeight="500"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_notification" />
+
+            <TextView
+                android:id="@+id/txt_message"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/Blue"
+                android:textFontWeight="500"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_notification" />
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="112dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginBottom="27dp"
+                android:background="@color/transparent"
+                android:text="@string/ok_uppercase"
+                android:textColor="@color/Blue"
+                android:textFontWeight="700"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_message"
+                app:strokeColor="@color/Gray" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>
+
+
+
+
+
+
