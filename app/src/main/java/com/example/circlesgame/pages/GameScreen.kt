@@ -1,4 +1,4 @@
-package com.example.circlesgame
+package com.example.circlesgame.pages
 
 import android.content.Context
 import android.graphics.Color
@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.circlesgame.R
+import com.example.circlesgame.popup.ResultsDialogFragment
 import com.example.circlesgame.databinding.FragmentGameScreenBinding
 import com.example.circlesgame.storages.SettingsStorage
 import com.example.circlesgame.storages.SettingsStorage.listRecords

@@ -1,4 +1,4 @@
-package com.example.circlesgame
+package com.example.circlesgame.pages
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.circlesgame.R
 import com.example.circlesgame.databinding.FragmentMainScreenBinding
 import com.example.circlesgame.storages.SettingsStorage
 import kotlin.system.exitProcess

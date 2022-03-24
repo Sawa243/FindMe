@@ -1,4 +1,4 @@
-package com.example.circlesgame
+package com.example.circlesgame.pages
 
 import android.os.Bundle
 import android.view.Gravity
@@ -11,6 +11,7 @@ import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.circlesgame.R
 import com.example.circlesgame.databinding.FragmentRecordsScreenBinding
 import com.example.circlesgame.storages.SettingsStorage
 

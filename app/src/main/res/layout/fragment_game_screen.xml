@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2196F3"
-    tools:context=".GameScreen">
+    tools:context=".pages.GameScreen">
 
     <com.example.circlesgame.components.CircleComponent
         android:id="@+id/game_circles"

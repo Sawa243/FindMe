@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/MainScreen"
-        android:name="com.example.circlesgame.MainScreen"
+        android:name="com.example.circlesgame.pages.MainScreen"
         tools:layout="@layout/fragment_main_screen">
 
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/GameScreen"
-        android:name="com.example.circlesgame.GameScreen"
+        android:name="com.example.circlesgame.pages.GameScreen"
         tools:layout="@layout/fragment_game_screen">
         <action
             android:id="@+id/action_GameScreen_to_MainScreen"
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/RecordsScreen"
-        android:name="com.example.circlesgame.RecordsScreen"
+        android:name="com.example.circlesgame.pages.RecordsScreen"
         android:label="RecordsScreen" >
         <action
             android:id="@+id/action_recordsScreen_to_MainScreen"
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/SettingsScreen"
-        android:name="com.example.circlesgame.SettingsScreen"
+        android:name="com.example.circlesgame.pages.SettingsScreen"
         android:label="SettingsScreen" >
         <action
             android:id="@+id/action_settingsScreen_to_MainScreen"

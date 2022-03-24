@@ -1,4 +1,4 @@
-package com.example.circlesgame
+package com.example.circlesgame.popup
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
