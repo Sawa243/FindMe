@@ -104,13 +104,13 @@
         app:strokeColor="@color/Red"
         app:strokeWidth="1dp" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btn_menu"
-        style="@style/ButtonStyle"
+        style="@style/MyStyleForButton"
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="40dp"
         android:text="@string/back_to_menu"
-        app:backgroundTint="#3FB190"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

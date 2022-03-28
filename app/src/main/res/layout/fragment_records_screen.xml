@@ -6,15 +6,13 @@
     android:gravity="top|center"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btn_menu"
-        style="@style/ButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/MyStyleForButton"
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="20dp"
-        android:background="#3FB190"
-        android:text="@string/back_to_menu" />
+        android:text="@string/back_to_menu"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/text_top"

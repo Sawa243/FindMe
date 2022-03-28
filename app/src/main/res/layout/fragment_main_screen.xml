@@ -9,13 +9,13 @@
 
     <TextView
         android:id="@+id/name_game"
+        style="@style/MyStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="@string/app_name"
         android:textColor="@color/Tan"
-        style="@style/MyStyle"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,19 +23,19 @@
 
     <Button
         android:id="@+id/button_start"
+        style="@style/MyStyleForButton"
         android:text="@string/new_game"
-        style="@style/ButtonStyle"
         app:layout_constraintBottom_toTopOf="@+id/button_settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_game"
+        app:layout_constraintVertical_bias="0.2"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/button_settings"
-        style="@style/ButtonStyle"
+        style="@style/MyStyleForButton"
         android:layout_marginTop="50dp"
         android:text="@string/settings"
         app:layout_constraintBottom_toTopOf="@+id/button_records"
@@ -46,7 +46,7 @@
 
     <Button
         android:id="@+id/button_records"
-        style="@style/ButtonStyle"
+        style="@style/MyStyleForButton"
         android:layout_marginTop="50dp"
         android:text="@string/records"
         app:layout_constraintBottom_toTopOf="@+id/button_exit"
@@ -57,11 +57,11 @@
 
     <Button
         android:id="@+id/button_exit"
-        style="@style/ButtonStyle"
+        style="@style/MyStyleForButton"
         android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
         android:text="@string/quit_the_game"
         android:textSize="24sp"
-        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

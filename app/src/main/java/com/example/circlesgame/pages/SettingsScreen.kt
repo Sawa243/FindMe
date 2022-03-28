@@ -32,14 +32,16 @@ class SettingsScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initBackgroundColorButtons()
-        binding.root.background = SettingsStorage.mainBackgroundColor.toDrawable()
 
-        binding.btnMenu.setOnClickListener {
-            with(activity?.getPreferences(Context.MODE_PRIVATE)?.edit()) {
-                this?.putInt("BACKGROUND_COLOR", SettingsStorage.mainBackgroundColor)
-                this?.apply()
+        binding.apply {
+            root.background = SettingsStorage.mainBackgroundColor.toDrawable()
+            btnMenu.setOnClickListener {
+                with(requireActivity().getPreferences(Context.MODE_PRIVATE).edit()) {
+                    this.putInt("BACKGROUND_COLOR", SettingsStorage.mainBackgroundColor)
+                    this.apply()
+                }
+                findNavController().navigate(R.id.action_settingsScreen_to_MainScreen)
             }
-            findNavController().navigate(R.id.action_settingsScreen_to_MainScreen)
         }
     }
 
@@ -49,34 +51,31 @@ class SettingsScreen : Fragment() {
     }
 
     private fun initBackgroundColorButtons() {
-        binding.buttonWhite.setOnClickListener {
-            SettingsStorage.mainBackgroundColor = Color.WHITE
-            binding.root.background = SettingsStorage.mainBackgroundColor.toDrawable()
-        }
-
-        binding.buttonGreen.setOnClickListener {
-            SettingsStorage.mainBackgroundColor = Color.GREEN
-            binding.root.background = SettingsStorage.mainBackgroundColor.toDrawable()
-        }
-
-        binding.buttonCyan.setOnClickListener {
-            SettingsStorage.mainBackgroundColor = Color.CYAN
-            binding.root.background = SettingsStorage.mainBackgroundColor.toDrawable()
-        }
-
-        binding.buttonYellow.setOnClickListener {
-            SettingsStorage.mainBackgroundColor = Color.YELLOW
-            binding.root.background = SettingsStorage.mainBackgroundColor.toDrawable()
-        }
-
-        binding.buttonGray.setOnClickListener {
-            SettingsStorage.mainBackgroundColor = Color.GRAY
-            binding.root.background = SettingsStorage.mainBackgroundColor.toDrawable()
-        }
-
-        binding.buttonRandom.setOnClickListener {
-            SettingsStorage.mainBackgroundColor = generateColor()
-            binding.root.background = SettingsStorage.mainBackgroundColor.toDrawable()
+        with(binding) {
+            buttonWhite.setOnClickListener {
+                SettingsStorage.mainBackgroundColor = Color.WHITE
+                root.background = SettingsStorage.mainBackgroundColor.toDrawable()
+            }
+            buttonGreen.setOnClickListener {
+                SettingsStorage.mainBackgroundColor = Color.GREEN
+                root.background = SettingsStorage.mainBackgroundColor.toDrawable()
+            }
+            buttonCyan.setOnClickListener {
+                SettingsStorage.mainBackgroundColor = Color.CYAN
+                root.background = SettingsStorage.mainBackgroundColor.toDrawable()
+            }
+            buttonYellow.setOnClickListener {
+                SettingsStorage.mainBackgroundColor = Color.YELLOW
+                root.background = SettingsStorage.mainBackgroundColor.toDrawable()
+            }
+            buttonGray.setOnClickListener {
+                SettingsStorage.mainBackgroundColor = Color.GRAY
+                root.background = SettingsStorage.mainBackgroundColor.toDrawable()
+            }
+            buttonRandom.setOnClickListener {
+                SettingsStorage.mainBackgroundColor = generateColor()
+                root.background = SettingsStorage.mainBackgroundColor.toDrawable()
+            }
         }
     }
 
@@ -84,4 +83,5 @@ class SettingsScreen : Fragment() {
         val random = Random.Default
         return Color.argb(255, random.nextInt(256), random.nextInt(256), random.nextInt(256))
     }
+
 }
