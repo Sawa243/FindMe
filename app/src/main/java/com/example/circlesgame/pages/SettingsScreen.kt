@@ -74,7 +74,7 @@ class SettingsScreen : Fragment() {
             binding.root.background = SettingsStorage.mainBackgroundColor.toDrawable()
         }
 
-        binding.buttonMagenta.setOnClickListener {
+        binding.buttonRandom.setOnClickListener {
             SettingsStorage.mainBackgroundColor = generateColor()
             binding.root.background = SettingsStorage.mainBackgroundColor.toDrawable()
         }

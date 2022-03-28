@@ -21,13 +21,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginVertical="20dp"
+        style="@style/ButtonStyle"
+        android:layout_marginBottom="20dp"
         android:background="#3FB190"
         android:text="@string/back_to_menu"
-        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,14 +33,14 @@
 
     <TextView
         android:id="@+id/txt_score"
+        style="@style/MyStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="20dp"
         android:gravity="end"
         android:text="@string/score"
-        android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/count_score"
         app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,23 +48,23 @@
 
     <TextView
         android:id="@+id/count_score"
+        style="@style/MyStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="20dp"
-        android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="000000" />
 
     <TextView
         android:id="@+id/timer"
+        style="@style/MyStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="20dp"
-        android:textColor="@color/Black"
-        android:textSize="25sp"
+        android:layout_marginStart="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/timer_text"
         app:layout_constraintTop_toBottomOf="@+id/txt_score"
@@ -75,15 +72,14 @@
 
     <TextView
         android:id="@+id/timer_text"
+        style="@style/MyStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="20dp"
-        android:textColor="@color/Black"
-        android:textSize="25sp"
         android:text="@string/timer"
         app:layout_constraintEnd_toStartOf="@+id/timer"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_score"/>
+        app:layout_constraintTop_toBottomOf="@+id/txt_score" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

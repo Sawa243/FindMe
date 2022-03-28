@@ -6,23 +6,22 @@
 
     <TextView
         android:id="@+id/textView_background"
+        style="@style/MyStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="46dp"
         android:text="@string/the_background"
-        android:textColor="@color/Black"
-        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_white"
+        style="@style/MyStyle"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:text="@string/white"
-        android:textColor="@color/Black"
         app:backgroundTint="@color/white"
         app:cornerRadius="90dp"
         app:layout_constraintEnd_toStartOf="@+id/button_green"
@@ -33,10 +32,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_green"
+        style="@style/MyStyle"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:text="@string/green"
-        android:textColor="@color/Black"
         app:backgroundTint="@color/Green"
         app:cornerRadius="90dp"
         app:layout_constraintEnd_toStartOf="@+id/button_cyan"
@@ -47,10 +46,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_cyan"
+        style="@style/MyStyle"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:text="@string/cyan"
-        android:textColor="@color/Black"
         app:backgroundTint="@color/Cyan"
         app:cornerRadius="90dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,11 +60,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_yellow"
+        style="@style/MyStyle"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:text="@string/yellow"
-        android:textColor="@color/Black"
         app:backgroundTint="@color/Yellow"
         app:cornerRadius="90dp"
         app:layout_constraintEnd_toStartOf="@+id/button_gray"
@@ -76,29 +75,29 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_gray"
+        style="@style/MyStyle"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_marginTop="2dp"
         android:text="@string/gray"
-        android:textColor="@color/Black"
         app:backgroundTint="@color/Gray"
         app:cornerRadius="90dp"
-        app:layout_constraintEnd_toStartOf="@+id/button_magenta"
+        app:layout_constraintEnd_toStartOf="@+id/button_random"
         app:layout_constraintStart_toEndOf="@+id/button_yellow"
         app:layout_constraintTop_toTopOf="@+id/button_yellow"
         app:strokeColor="@color/Red"
         app:strokeWidth="1dp" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_magenta"
+        android:id="@+id/button_random"
+        style="@style/MyStyle"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_marginTop="2dp"
         android:text="@string/random"
-        android:textColor="@color/Black"
+        android:textSize="24sp"
         app:backgroundTint="@color/transparent"
         app:cornerRadius="90dp"
-        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_gray"
         app:layout_constraintTop_toTopOf="@+id/button_yellow"
@@ -107,12 +106,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/ButtonStyle"
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="40dp"
         android:text="@string/back_to_menu"
-        android:textSize="25sp"
         app:backgroundTint="#3FB190"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
