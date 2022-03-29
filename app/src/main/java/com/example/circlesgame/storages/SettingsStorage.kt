@@ -1,7 +1,6 @@
 package com.example.circlesgame.storages
 
 import android.graphics.Color
-import androidx.annotation.Keep
 import kotlinx.serialization.Serializable
 
 object SettingsStorage {
