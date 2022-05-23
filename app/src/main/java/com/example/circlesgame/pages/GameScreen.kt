@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +12,13 @@ import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.circlesgame.R
-import com.example.circlesgame.popup.ResultsDialogFragment
 import com.example.circlesgame.databinding.FragmentGameScreenBinding
+import com.example.circlesgame.popup.ResultsDialogFragment
 import com.example.circlesgame.storages.SettingsStorage
 import com.example.circlesgame.storages.SettingsStorage.listRecords
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import kotlin.random.Random
@@ -71,10 +75,42 @@ class GameScreen : Fragment() {
 
     private fun notCorrectAnswer() {
         timer.cancel()
-        ResultsDialogFragment(score) { restartGame() }.show(
+        ResultsDialogFragment(score) { loadBanner() }.show(
             childFragmentManager,
             ResultsDialogFragment.TAG
         )
+    }
+
+    private fun loadBanner() {
+        val adRequest = AdRequest.Builder().build()
+        binding.banner.apply {
+            loadAd(adRequest)
+            adListener = object : AdListener() {
+                override fun onAdLoaded() {
+                    Log.d("BANNER", "Load")
+
+                }
+
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    Log.d("BANNER", "$adError")
+                    restartGame()
+                }
+
+                override fun onAdOpened() {
+                    Log.d("BANNER", "Open")
+                }
+
+                override fun onAdClicked() {
+                    Log.d("BANNER", "Clicked")
+                    restartGame()
+                }
+
+                override fun onAdClosed() {
+                    Log.d("BANNER", "Closed")
+                    restartGame()
+                }
+            }
+        }
     }
 
     private fun restartGame() {
@@ -134,6 +170,16 @@ class GameScreen : Fragment() {
         super.onDestroyView()
         timer.cancel()
         _binding = null
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.banner.resume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        binding.banner.pause()
     }
 
 }

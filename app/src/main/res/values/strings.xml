@@ -17,4 +17,6 @@
     <string name="random">Random</string>
     <string name="score">Score:</string>
     <string name="timer">Timer: </string>
+    <string name="admob_app_id" translatable="false">ca-app-pub-6754601615997193~5470825040</string>
+    <string name="admob_banner_id" translatable="false">ca-app-pub-6754601615997193/8059090247</string>
 </resources>
