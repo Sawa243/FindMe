@@ -11,10 +11,6 @@
         android:theme="@style/Theme.CirclesGame"
         android:hardwareAccelerated="true">
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/admob_app_id"/>
-
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"

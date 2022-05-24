@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,9 +15,11 @@ import com.example.circlesgame.databinding.FragmentGameScreenBinding
 import com.example.circlesgame.popup.ResultsDialogFragment
 import com.example.circlesgame.storages.SettingsStorage
 import com.example.circlesgame.storages.SettingsStorage.listRecords
-import com.google.android.gms.ads.AdListener
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.LoadAdError
+import com.yandex.mobile.ads.banner.AdSize
+import com.yandex.mobile.ads.banner.BannerAdEventListener
+import com.yandex.mobile.ads.common.AdRequest
+import com.yandex.mobile.ads.common.AdRequestError
+import com.yandex.mobile.ads.common.ImpressionData
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import kotlin.random.Random
@@ -57,6 +58,43 @@ class GameScreen : Fragment() {
         }
         createCircle()
         startTimeCounter()
+
+        binding.banner.setAdUnitId("R-M-DEMO-320x50-app_install") // requireContext().getString(R.string.admob_banner_id)
+        binding.banner.setAdSize(AdSize.BANNER_320x50)
+        val adRequest = AdRequest.Builder().build()
+        binding.banner.setBannerAdEventListener(object :BannerAdEventListener{
+            override fun onAdLoaded() {
+
+            }
+
+            override fun onAdFailedToLoad(p0: AdRequestError) {
+
+            }
+
+            override fun onAdClicked() {
+                timer.apply {
+                    cancel()
+                    start()
+                }
+            }
+
+            override fun onLeftApplication() {
+                timer.cancel()
+            }
+
+            override fun onReturnedToApplication() {
+                timer.apply {
+                    cancel()
+                    start()
+                }
+            }
+
+            override fun onImpression(p0: ImpressionData?) {
+
+            }
+
+        })
+        binding.banner.loadAd(adRequest)
     }
 
     private fun correctAnswer() {
@@ -75,42 +113,10 @@ class GameScreen : Fragment() {
 
     private fun notCorrectAnswer() {
         timer.cancel()
-        ResultsDialogFragment(score) { loadBanner() }.show(
+        ResultsDialogFragment(score) {  restartGame() }.show(
             childFragmentManager,
             ResultsDialogFragment.TAG
         )
-    }
-
-    private fun loadBanner() {
-        val adRequest = AdRequest.Builder().build()
-        binding.banner.apply {
-            loadAd(adRequest)
-            adListener = object : AdListener() {
-                override fun onAdLoaded() {
-                    Log.d("BANNER", "Load")
-
-                }
-
-                override fun onAdFailedToLoad(adError: LoadAdError) {
-                    Log.d("BANNER", "$adError")
-                    restartGame()
-                }
-
-                override fun onAdOpened() {
-                    Log.d("BANNER", "Open")
-                }
-
-                override fun onAdClicked() {
-                    Log.d("BANNER", "Clicked")
-                    restartGame()
-                }
-
-                override fun onAdClosed() {
-                    Log.d("BANNER", "Closed")
-                    restartGame()
-                }
-            }
-        }
     }
 
     private fun restartGame() {
@@ -174,12 +180,12 @@ class GameScreen : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        binding.banner.resume()
+
     }
 
     override fun onPause() {
         super.onPause()
-        binding.banner.pause()
+
     }
 
 }

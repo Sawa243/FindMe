@@ -8,10 +8,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.circlesgame.databinding.ActivityMainBinding
 import com.example.circlesgame.storages.SettingsStorage
-import com.google.android.gms.ads.MobileAds
+import com.yandex.mobile.ads.common.MobileAds
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        MobileAds.initialize(this) {}
+        MobileAds.initialize(this){}
 
         sharedPref = this.getPreferences(Context.MODE_PRIVATE)
         SettingsStorage.apply {

@@ -8,18 +8,15 @@
     android:background="#2196F3"
     tools:context=".pages.GameScreen">
 
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.yandex.mobile.ads.banner.BannerAdView
         android:id="@+id/banner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        android:layout_margin="10dp"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        android:layout_margin="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_menu" />
 
     <com.example.circlesgame.components.CircleComponent
         android:id="@+id/game_circles"
@@ -36,7 +33,7 @@
         android:id="@+id/btn_menu"
         style="@style/MyStyleForButton"
         android:layout_width="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="50dp"
         android:text="@string/back_to_menu"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
