@@ -38,7 +38,7 @@ fun MainScreen(modifier: Modifier, background: Color, navController: NavHostCont
 
     val view = LocalView.current
     (view.context as Activity).window.statusBarColor = background.toArgb()
-    (view.context as Activity).window.navigationBarColor = Color.Green.toArgb()
+    (view.context as Activity).window.navigationBarColor = background.toArgb()
 
     val blacking by remember {
         mutableStateOf(background == Color.Black)
@@ -86,7 +86,7 @@ fun MainScreen(modifier: Modifier, background: Color, navController: NavHostCont
                     ) {
                         Text(
                             text = stringResource(id = R.string.new_game),
-                            style = TextStyle(blacking)
+                            style = TextStyle()
                         )
                     }
                 }
@@ -112,7 +112,7 @@ fun MainScreen(modifier: Modifier, background: Color, navController: NavHostCont
                     ) {
                         Text(
                             text = stringResource(id = R.string.settings),
-                            style = TextStyle(blacking)
+                            style = TextStyle()
                         )
                     }
                 }
@@ -138,7 +138,7 @@ fun MainScreen(modifier: Modifier, background: Color, navController: NavHostCont
                     ) {
                         Text(
                             text = stringResource(id = R.string.records),
-                            style = TextStyle(blacking)
+                            style = TextStyle()
                         )
                     }
                 }
@@ -164,7 +164,7 @@ fun MainScreen(modifier: Modifier, background: Color, navController: NavHostCont
                     ) {
                         Text(
                             text = stringResource(id = R.string.quit_the_game),
-                            style = TextStyle(blacking)
+                            style = TextStyle()
                         )
                     }
                 }

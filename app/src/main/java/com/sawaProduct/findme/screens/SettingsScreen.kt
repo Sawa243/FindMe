@@ -37,7 +37,7 @@ fun SettingsScreen(
 ) {
     val view = LocalView.current
     (view.context as Activity).window.statusBarColor = background.toArgb()
-    (view.context as Activity).window.navigationBarColor = Color.Green.toArgb()
+    (view.context as Activity).window.navigationBarColor = background.toArgb()
 
     var blacking by remember {
         mutableStateOf(background == Color.Black)
@@ -244,7 +244,7 @@ fun SettingsScreen(
                     ) {
                         Text(
                             text = stringResource(id = R.string.back_to_menu),
-                            style = TextStyle(blacking)
+                            style = TextStyle()
                         )
                     }
                 }

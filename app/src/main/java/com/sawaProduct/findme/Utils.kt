@@ -19,7 +19,7 @@ import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import kotlin.random.Random
 
-fun TextStyle(blacking: Boolean): TextStyle {
+fun TextStyle(blacking: Boolean = false): TextStyle {
     return TextStyle(
         color = if (blacking) {
             Color.White

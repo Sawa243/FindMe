@@ -108,7 +108,7 @@ fun GameScreen(
                         Text(
                             text = stringResource(id = R.string.menu),
 
-                            style = TextStyle(blacking)
+                            style = TextStyle()
                         )
                     }
                 }

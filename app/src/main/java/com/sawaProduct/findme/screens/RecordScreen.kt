@@ -84,7 +84,7 @@ fun RecordScreen(
                     ) {
                         Text(
                             text = stringResource(id = R.string.back_to_menu),
-                            style = TextStyle(blacking)
+                            style = TextStyle()
                         )
                     }
                 }
