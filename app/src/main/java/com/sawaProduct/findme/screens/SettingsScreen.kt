@@ -43,7 +43,7 @@ fun SettingsScreen(
         mutableStateOf(background == Color.Black)
     }
 
-    Box(
+    BoxWithConstraints (
         modifier = modifier
             .background(background)
             .fillMaxSize()

@@ -21,7 +21,7 @@ import com.sawaProduct.findme.TextStyle
 @Composable
 fun PopUpResults(score: Int, blacking: Boolean, popUpOk: () -> Unit) {
 
-    Box(modifier = Modifier
+    BoxWithConstraints (modifier = Modifier
         .fillMaxSize()
         .clickable { }, contentAlignment = Alignment.Center) {
         Card(

@@ -37,7 +37,7 @@ fun RecordScreen(
     val blacking by remember {
         mutableStateOf(stateBackground == Color.Black)
     }
-    Box(
+    BoxWithConstraints (
         modifier = modifier
             .fillMaxSize()
             .background(stateBackground)

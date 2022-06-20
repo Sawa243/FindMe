@@ -43,7 +43,7 @@ fun MainScreen(modifier: Modifier, background: Color, navController: NavHostCont
     val blacking by remember {
         mutableStateOf(background == Color.Black)
     }
-    Box(
+    BoxWithConstraints (
         modifier = modifier
             .background(background)
             .fillMaxSize()

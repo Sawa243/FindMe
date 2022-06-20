@@ -72,7 +72,7 @@ fun GameScreen(
         notCorrectAnswer()
     }
 
-    Box(
+    BoxWithConstraints (
         modifier = modifier
             .fillMaxSize()
             .background(stateBackground)
