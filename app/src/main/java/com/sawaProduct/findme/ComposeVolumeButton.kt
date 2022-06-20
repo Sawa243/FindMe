@@ -27,7 +27,7 @@ import kotlin.math.atan2
 import kotlin.math.roundToInt
 
 @Composable
-fun ComposeVolumeButton(music: MediaPlayer) {
+fun ComposeVolumeButton(music: MediaPlayer, haveHeight: Boolean) {
     Box(
         contentAlignment = Alignment.Center
     ) {
@@ -42,7 +42,7 @@ fun ComposeVolumeButton(music: MediaPlayer) {
             val barCount = 20
 
             MusicVolume(
-                modifier = Modifier.size(100.dp)
+                modifier = Modifier.size(if (haveHeight) 100.dp else 60.dp)
             ) {
                 volume = it
                 music.setVolume(it / 10, it / 10)
@@ -54,7 +54,7 @@ fun ComposeVolumeButton(music: MediaPlayer) {
             VolumeBar(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(80.dp),
+                    .height(if (haveHeight) 80.dp else 45.dp),
                 activeBars = (barCount * volume).roundToInt(),
                 barCount = barCount
             )

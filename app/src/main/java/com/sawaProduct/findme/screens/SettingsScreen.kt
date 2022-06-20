@@ -43,15 +43,25 @@ fun SettingsScreen(
         mutableStateOf(background == Color.Black)
     }
 
-    BoxWithConstraints (
+    var padding by remember {
+        mutableStateOf(50.dp)
+    }
+    var haveHeight by remember {
+        mutableStateOf(true)
+    }
+    BoxWithConstraints(
         modifier = modifier
             .background(background)
             .fillMaxSize()
     ) {
+        if (this.maxHeight < 700.dp) {
+            padding = 5.dp
+            haveHeight = false
+        }
         Column(
             modifier = modifier
                 .fillMaxSize()
-                .padding(top = 50.dp, bottom = 50.dp),
+                .padding(top = padding, bottom = padding),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
@@ -224,7 +234,7 @@ fun SettingsScreen(
             }
 
             Box(modifier = modifier.padding(5.dp)) {
-                ComposeVolumeButton(music)
+                ComposeVolumeButton(music, haveHeight)
             }
 
             Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {

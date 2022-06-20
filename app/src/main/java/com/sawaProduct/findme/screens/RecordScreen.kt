@@ -7,10 +7,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -34,17 +31,23 @@ fun RecordScreen(
     val records by remember {
         mutableStateOf(SettingsStorage.listRecords.list)
     }
+    var padding by remember {
+        mutableStateOf(60.dp)
+    }
     val blacking by remember {
         mutableStateOf(stateBackground == Color.Black)
     }
-    BoxWithConstraints (
+    BoxWithConstraints(
         modifier = modifier
             .fillMaxSize()
             .background(stateBackground)
     ) {
+        if (this.maxHeight < 700.dp) {
+            padding = 5.dp
+        }
         Column(
             modifier = modifier
-                .padding(top = 100.dp, bottom = 60.dp)
+                .padding(top = padding, bottom = padding)
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top

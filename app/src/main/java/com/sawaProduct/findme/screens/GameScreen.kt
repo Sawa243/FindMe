@@ -71,15 +71,20 @@ fun GameScreen(
     if (lostGame == 1) {
         notCorrectAnswer()
     }
-
-    BoxWithConstraints (
+    var padding by remember {
+        mutableStateOf(80.dp)
+    }
+    BoxWithConstraints(
         modifier = modifier
             .fillMaxSize()
             .background(stateBackground)
     ) {
+        if (this.maxHeight < 700.dp) {
+            padding = 10.dp
+        }
         Column(
             modifier = modifier
-                .padding(top = 20.dp, bottom = 80.dp, end = 20.dp, start = 20.dp)
+                .padding(top = 20.dp, bottom = padding, end = 20.dp, start = 20.dp)
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
@@ -126,7 +131,7 @@ fun GameScreen(
             }
             Row(
                 modifier = modifier
-                    .padding(top = 10.dp)
+                    .padding(top = 10.dp, bottom = 5.dp)
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
