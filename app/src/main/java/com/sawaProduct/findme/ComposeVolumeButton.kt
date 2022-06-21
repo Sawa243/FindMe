@@ -36,7 +36,7 @@ fun ComposeVolumeButton(music: MediaPlayer, haveHeight: Boolean) {
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                 .border(1.dp, Color.Red, RoundedCornerShape(10.dp))
-                .padding(20.dp)
+                .padding(if (haveHeight) 20.dp else 10.dp)
         ) {
             var volume by remember { mutableStateOf(SettingsStorage.musicVolume * 10) }
             val barCount = 20

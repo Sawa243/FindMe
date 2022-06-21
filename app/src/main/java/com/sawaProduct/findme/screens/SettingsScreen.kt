@@ -46,6 +46,9 @@ fun SettingsScreen(
     var padding by remember {
         mutableStateOf(50.dp)
     }
+    var paddingRow by remember {
+        mutableStateOf(25.dp)
+    }
     var haveHeight by remember {
         mutableStateOf(true)
     }
@@ -57,6 +60,7 @@ fun SettingsScreen(
         if (this.maxHeight < 700.dp) {
             padding = 5.dp
             haveHeight = false
+            paddingRow = 10.dp
         }
         Column(
             modifier = modifier
@@ -72,7 +76,7 @@ fun SettingsScreen(
             )
 
             Row(
-                modifier = modifier.padding(top = 25.dp),
+                modifier = modifier.padding(top = paddingRow),
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -121,7 +125,7 @@ fun SettingsScreen(
             }
 
             Row(
-                modifier = modifier.padding(top = 25.dp),
+                modifier = modifier.padding(top = paddingRow),
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -170,7 +174,7 @@ fun SettingsScreen(
             }
 
             Row(
-                modifier = modifier.padding(top = 25.dp),
+                modifier = modifier.padding(top = paddingRow),
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {

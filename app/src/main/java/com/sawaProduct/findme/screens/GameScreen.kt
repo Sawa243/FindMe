@@ -53,7 +53,6 @@ fun GameScreen(
 
     var startCountCircle by remember { mutableStateOf(3) }
     var changeAlpha by remember { mutableStateOf(0.50f) }
-    val randomCircle = (0 until startCountCircle).random()
 
     fun correctAnswer() {
         if (startCountCircle < 78) startCountCircle += 3 else startCountCircle = 80
@@ -65,14 +64,17 @@ fun GameScreen(
     fun notCorrectAnswer() {
         viewModel.cancelTimer()
         visiblePopup = true
-
+        changeAlpha = 0.50f
     }
 
     if (lostGame == 1) {
         notCorrectAnswer()
     }
-    var padding by remember {
+    var paddingBottom by remember {
         mutableStateOf(80.dp)
+    }
+    var paddingTop by remember {
+        mutableStateOf(20.dp)
     }
     BoxWithConstraints(
         modifier = modifier
@@ -80,11 +82,12 @@ fun GameScreen(
             .background(stateBackground)
     ) {
         if (this.maxHeight < 700.dp) {
-            padding = 10.dp
+            paddingBottom = 5.dp
+            paddingTop = 5.dp
         }
         Column(
             modifier = modifier
-                .padding(top = 20.dp, bottom = padding, end = 20.dp, start = 20.dp)
+                .padding(top = paddingTop, bottom = paddingBottom, end = 20.dp, start = 20.dp)
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
@@ -150,7 +153,7 @@ fun GameScreen(
                 { notCorrectAnswer() },
                 startCountCircle,
                 changeAlpha,
-                randomCircle
+                (0 until startCountCircle).random()
             )
 
             /*Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
