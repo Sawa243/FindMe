@@ -26,7 +26,6 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
-
 class MainActivity : ComponentActivity() {
 
     private lateinit var sharedPref: SharedPreferences
@@ -35,7 +34,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //MobileAds.initialize(this){}
 
         sharedPref = this.getPreferences(Context.MODE_PRIVATE)
         SettingsStorage.apply {

@@ -1,10 +1,7 @@
 package com.sawaProduct.findme
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.ContextWrapper
-import android.media.AudioManager
-import android.media.SoundPool
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -69,31 +66,4 @@ fun Context.getActivity(): ComponentActivity? = when (this) {
     is ComponentActivity -> this
     is ContextWrapper -> baseContext.getActivity()
     else -> null
-}
-
-@SuppressLint("StaticFieldLeak")
-object SoundUtil {
-
-    private var _context: Context? = null
-    private val sp: SoundPool by lazy {
-        SoundPool.Builder().setMaxStreams(4).setMaxStreams(AudioManager.STREAM_MUSIC).build()
-    }
-
-    fun init(context: Context) {
-        _context = context
-        sp.load(_context, R.raw.bensound, 1)
-    }
-
-    fun release() {
-        _context = null
-        sp.release()
-    }
-
-
-    fun play(isMute: Boolean) {
-        if (!isMute) {
-            sp.play(requireNotNull(R.raw.bensound), 1f, 1f, 0, 0, 1f)
-        }
-    }
-
 }

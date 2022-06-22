@@ -156,46 +156,6 @@ fun GameScreen(
                 (0 until startCountCircle).random()
             )
 
-            /*Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
-                AndroidView(
-                    factory = { context ->
-                        BannerAdView(context).apply {
-                            val adRequest = AdRequest.Builder().build()
-                            setAdUnitId("R-M-DEMO-interstitial") // (R.string.admob_banner_id)
-                            setAdSize(AdSize.BANNER_320x50)
-                            setBannerAdEventListener(object : BannerAdEventListener {
-                                override fun onAdLoaded() {
-
-                                }
-
-                                override fun onAdFailedToLoad(p0: AdRequestError) {
-
-                                }
-
-                                override fun onAdClicked() {
-
-                                }
-
-                                override fun onLeftApplication() {
-
-                                }
-
-                                override fun onReturnedToApplication() {
-
-                                }
-
-                                override fun onImpression(p0: ImpressionData?) {
-
-                                }
-
-                            })
-                            loadAd(adRequest)
-                        }
-                    },
-                )
-
-            }*/
-
         }
     }
 
