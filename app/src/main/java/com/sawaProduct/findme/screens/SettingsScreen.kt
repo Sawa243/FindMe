@@ -96,7 +96,7 @@ fun SettingsScreen(
                         border = BorderStroke(1.dp, Color.Black)
                     ) {}
                     Text(
-                        modifier = modifier.padding(top = 10.dp),
+                        modifier = modifier.padding(top = 10.dp).width(110.dp),
                         text = stringResource(id = R.string.white),
                         style = TextStyle(blacking)
                     )
@@ -117,7 +117,7 @@ fun SettingsScreen(
                         border = BorderStroke(1.dp, Color.Black)
                     ) {}
                     Text(
-                        modifier = modifier.padding(top = 10.dp),
+                        modifier = modifier.padding(top = 10.dp).width(110.dp),
                         text = stringResource(id = R.string.green),
                         style = TextStyle(blacking)
                     )
@@ -145,7 +145,7 @@ fun SettingsScreen(
                         border = BorderStroke(1.dp, Color.White)
                     ) {}
                     Text(
-                        modifier = modifier.padding(top = 10.dp),
+                        modifier = modifier.padding(top = 10.dp).width(110.dp),
                         text = stringResource(id = R.string.black),
                         style = TextStyle(blacking)
                     )
@@ -166,7 +166,7 @@ fun SettingsScreen(
                         border = BorderStroke(1.dp, Color.Black)
                     ) {}
                     Text(
-                        modifier = modifier.padding(top = 10.dp),
+                        modifier = modifier.padding(top = 10.dp).width(110.dp),
                         text = stringResource(id = R.string.cyan),
                         style = TextStyle(blacking)
                     )
@@ -194,7 +194,7 @@ fun SettingsScreen(
                         border = BorderStroke(1.dp, Color.Black)
                     ) {}
                     Text(
-                        modifier = modifier.padding(top = 10.dp),
+                        modifier = modifier.padding(top = 10.dp).width(110.dp),
                         text = stringResource(id = R.string.yellow),
                         style = TextStyle(blacking)
                     )
@@ -230,7 +230,7 @@ fun SettingsScreen(
                         )
                     }
                     Text(
-                        modifier = modifier.padding(top = 10.dp),
+                        modifier = modifier.padding(top = 10.dp).width(110.dp),
                         text = stringResource(id = R.string.random),
                         style = TextStyle(blacking)
                     )
