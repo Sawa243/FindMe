@@ -257,6 +257,7 @@ fun CreateStandardButton(
             .size(size)
             .alpha(newAlpha),
         shape = CircleShape,
+        elevation = ButtonDefaults.buttonElevation(defaultElevation = 5.dp),
         colors = ButtonDefaults.buttonColors(containerColor = color)
     ) {}
 }
